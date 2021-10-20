@@ -11,7 +11,7 @@
 
 using namespace std;
 
-PID::PID():err(.0), integral_error(.0), delta_time(.0) {}
+PID::PID():err(.0), integral_error(.0), update_error_count(0), delta_time(.0) {}
 
 PID::~PID() {}
 
@@ -24,6 +24,10 @@ void PID::Init(double Kpi, double Kii, double Kdi, double output_lim_maxi, doubl
     this->Kdi = Kdi;
     this->output_lim_maxi = output_lim_maxi;
     this->output_lim_mini = output_lim_mini;
+    this->err = .0;
+    this->integral_error = .0;
+    this->delta_time = .0;
+    this->update_error_count = 0;
 }
 
 
@@ -33,6 +37,7 @@ void PID::UpdateError(double cte) {
    **/
    this->err = cte;
    this->integral_error += cte;
+   this->update_error_count += 1;
 }
 
 double PID::TotalError() {
@@ -40,7 +45,8 @@ double PID::TotalError() {
    * TODO: Calculate and return the total error
     * The code should return a value in the interval [output_lim_mini, output_lim_maxi]
    */
-    double control = min(this->output_lim_maxi, max(this->output_lim_mini, this->integral_error));
+    double average_error = this->err / this->update_error_count;
+    double control = min(this->output_lim_maxi, max(this->output_lim_mini, average_error));
     return control;
 }
 
