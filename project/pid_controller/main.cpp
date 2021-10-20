@@ -340,6 +340,7 @@ int main ()
 	  double actual_velocity = velocity;
 	  double desired_velocity = v_points.back();
           error_throttle = desired_velocity - actual_velocity;
+	  std::cout << "actual_velocity = " << actual_velocity << ", " << "desired_velocity = " << desired_velocity << std::endl; 
 
           double throttle_output;
           double brake_output;
