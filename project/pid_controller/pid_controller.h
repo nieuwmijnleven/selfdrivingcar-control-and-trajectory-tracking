@@ -17,9 +17,9 @@ public:
     /*
     * Errors
     */
-    double err;
-    double integral_error;
-    int update_error_count;
+    double cte;
+    double prev_cte;
+    double integral_cte;
 
     /*
     * Coefficients

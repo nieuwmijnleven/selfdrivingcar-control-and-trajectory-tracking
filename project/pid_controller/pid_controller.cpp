@@ -11,7 +11,12 @@
 
 using namespace std;
 
-PID::PID():err(.0), integral_error(.0), update_error_count(0), delta_time(.0) {}
+PID::PID()
+:Kpi(.0), Kii(.0), Kdi(.0), 
+output_lim_maxi(.0), output_lim_mini(.0),
+cte(.0), prev_cte(.0), integral_cte(0), 
+delta_time(.0) 
+{}
 
 PID::~PID() {}
 
@@ -24,10 +29,10 @@ void PID::Init(double Kpi, double Kii, double Kdi, double output_lim_maxi, doubl
     this->Kdi = Kdi;
     this->output_lim_maxi = output_lim_maxi;
     this->output_lim_mini = output_lim_mini;
-    this->err = .0;
-    this->integral_error = .0;
+    this->cte = .0;
+    this->prev_cte = .0;
+    this->integral_cte = .0;
     this->delta_time = .0;
-    this->update_error_count = 0;
 }
 
 
@@ -35,9 +40,9 @@ void PID::UpdateError(double cte) {
    /**
    * TODO: Update PID errors based on cte.
    **/
-   this->err = cte;
-   this->integral_error += cte;
-   this->update_error_count += 1;
+   this->prev_cte = this->cte;
+   this->cte = cte;
+   this->integral_cte += cte;
 }
 
 double PID::TotalError() {
@@ -45,8 +50,9 @@ double PID::TotalError() {
    * TODO: Calculate and return the total error
     * The code should return a value in the interval [output_lim_mini, output_lim_maxi]
    */
-    double average_error = this->err / this->update_error_count;
-    double control = min(this->output_lim_maxi, max(this->output_lim_mini, average_error));
+    double diff_cte = cte - prev_cte;
+    double control = -Kpi * cte + -Kii * integral_cte + -Kdi * diff_cte;  
+    control = min(this->output_lim_maxi, max(this->output_lim_mini, control));
     return control;
 }
 
