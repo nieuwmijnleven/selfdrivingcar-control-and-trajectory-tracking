@@ -304,7 +304,7 @@ int main ()
           **/
  	  double desired_steer_angle = angle_between_points(x_points[x_points.size()-2], y_points[y_points.size()-2], x_points[x_points.size()-1], y_points[y_points.size()-1]);
           //error_steer = desired_steer_angle - yaw;
-          error_steer = yaw - desired_steer_angle;
+          error_steer = fmod(yaw - desired_steer_angle, 2.0 * M_PI);
 
           /**
           * TODO (step 3): uncomment these lines
@@ -356,6 +356,7 @@ int main ()
           double throttle = pid_throttle.TotalError();
 	  std::cout << "throttle = " << throttle << std::endl; 
 
+	  throttle = 0.3;
           // Adapt the negative throttle to break
           if (throttle > 0.0) {
             throttle_output = throttle;
