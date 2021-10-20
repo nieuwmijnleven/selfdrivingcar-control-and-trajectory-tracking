@@ -11,7 +11,7 @@
 
 using namespace std;
 
-PID::PID():err(0.0), delta_time(0.0) {}
+PID::PID():err(.0), integral_error(.0), delta_time(.0) {}
 
 PID::~PID() {}
 
@@ -40,7 +40,7 @@ double PID::TotalError() {
    * TODO: Calculate and return the total error
     * The code should return a value in the interval [output_lim_mini, output_lim_maxi]
    */
-    double control = min(output_lim_maxi, max(output_lim_mini, integral_error));
+    double control = min(this->output_lim_maxi, max(this->output_lim_mini, this->integral_error));
     return control;
 }
 
