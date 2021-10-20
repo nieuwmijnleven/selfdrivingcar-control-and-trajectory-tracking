@@ -304,6 +304,7 @@ int main ()
           **/
  	  double desired_steer_angle = angle_between_points(x_points[x_points.size()-2], y_points[y_points.size()-2], x_points[x_points.size()-1], y_points[y_points.size()-1]);
           error_steer = desired_steer_angle - yaw;
+          error_steer = yaw - desired_steer_angle;
 
           /**
           * TODO (step 3): uncomment these lines
@@ -339,7 +340,8 @@ int main ()
           // modify the following line for step 2
 	  double actual_velocity = velocity;
 	  double desired_velocity = v_points.back();
-          error_throttle = desired_velocity - actual_velocity;
+          //error_throttle = desired_velocity - actual_velocity;
+          error_throttle = actual_velocity - desired_velocity; 
 	  std::cout << "actual_velocity = " << actual_velocity << ", " << "desired_velocity = " << desired_velocity << std::endl; 
 	  std::cout << "error_throttle = " << error_throttle << std::endl; 
 
