@@ -341,6 +341,7 @@ int main ()
 	  double desired_velocity = v_points.back();
           error_throttle = desired_velocity - actual_velocity;
 	  std::cout << "actual_velocity = " << actual_velocity << ", " << "desired_velocity = " << desired_velocity << std::endl; 
+	  std::cout << "error_throttle = " << error_throttle << std::endl; 
 
           double throttle_output;
           double brake_output;
@@ -351,6 +352,7 @@ int main ()
           // Compute control to apply
           pid_throttle.UpdateError(error_throttle);
           double throttle = pid_throttle.TotalError();
+	  std::cout << "throttle = " << error_throttle << std::endl; 
 
           // Adapt the negative throttle to break
           if (throttle > 0.0) {
