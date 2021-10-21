@@ -1,4 +1,46 @@
-# Control and Trajectory Tracking for Autonomous Vehicle
+# Final Project : Control and Trajectory Tracking for Autonomous Vehicle
+
+## Set up
+### 1. Running CARLA Simulator
+```
+** Create a new terminal **
+$> su - student
+$> cd /opt/carla-simulator/
+$> SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh -opengl
+```
+### 2. Cloning the project repository
+```
+** Create a new terminal **
+$> git clone https://github.com/nieuwmijnleven/motion-planning-and-decision-making.git
+$> cd ./motion-planning-and-decision-making
+```
+### 3. Installing build essential tools
+```
+$> cd ./project
+$> ./install-ubuntu.sh
+```
+### 4. Building this project
+```
+$> cd ./pid_controller
+$> rm -rf rpclib
+$> git clone https://github.com/rpclib/rpclib.git
+$> cmake .
+$> make
+```
+### 5. Running this project
+```
+$> cd ../
+$> ./run_main.sh
+// This will silently fail
+// ctrl + C to stop 
+// run 'run_main.sh' again
+$> ./run_main.sh
+```
+**If error bind is already in use, or address already being used**
+
+* `ps -aux | grep carla`
+* `kill id`
+
 
 # Proportional-Integral-Derivative (PID)
 
