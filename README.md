@@ -51,7 +51,7 @@ $> ./run_main.sh
 
 ## PID Controller Implementations
 ### Error Computation
-* We used the typical formula of this PID controller
+* We used the typical formula for PID controller
 * PID Error Computation Formula
   * total error = -kpi * cte + -kdi * diff_cte + -kii * int_cte
   * cte = cross track error
