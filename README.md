@@ -64,7 +64,7 @@ $> ./run_main.sh
 * throttle error line is stable and streight
   * Only our car moves in the simulatior  
   * There are no moving obstacles
-  * Thus, There are no need for accelerations or deaccelerations
+  * Thus, there are no need for accelerations or deaccelerations
 <kbd>
  <img src = "project/img/throttle3.png?raw=true" width=640/>
 </kbd>
