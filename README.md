@@ -51,6 +51,11 @@ $> ./run_main.sh
 
 ## Answering the Questions
 ### 1. Add the plots to your report and explain them (describe what you see)
+* The following graph shows steer output and steer error
+* steer error line is skyrocketed four times.
+  * There are three obstacles
+  * Therefore, our car have to change direction four times.
+
 <kbd>
  <img src = "project/img/steer3.png?raw=true" width=640/>
 </kbd>
