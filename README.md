@@ -84,8 +84,17 @@ $> ./run_main.sh
 
 
 ### 4. PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
-### 5. (Optional) What would you do to improve the PID controller?
+* Advantage
+  * feasibility
+  * easy to be implemented
+  * PID gains can be designed based upon the system parameters
+  * PID helps you control a system adequately without full information of the its characteristics
 
+* Disadvantage
+  * 3 control elements are not exclusively independent from each other
+    *  one element can change by adjusting the other
+      *  thus, designing PID is more complex than P, PD or PI
+  *  PID controller has low robustness compared with the other robust controller
 
 # Proportional-Integral-Derivative (PID)
 
