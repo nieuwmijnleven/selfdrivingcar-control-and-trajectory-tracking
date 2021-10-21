@@ -91,7 +91,7 @@ $> ./run_main.sh
   * PID helps you control a system adequately without full information of the its characteristics
 
 * Disadvantage
-  * 3 control elements are not exclusively independent from each other
+  * Three control elements are not exclusively independent from each other
     *  one element can change by adjusting the other
       *  thus, designing PID is more complex than P, PD or PI
   *  PID controller has low robustness compared with the other robust controller
