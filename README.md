@@ -70,7 +70,19 @@ $> ./run_main.sh
 </kbd>
 
 ### 2. What is the effect of the PID according to the plots, how each part of the PID affects the control command?
+
 ### 3. How would you design a way to automatically tune the PID parameters?
+* It is challenging to tuning the PID parameters automatically in the simulation environment
+* We decided to follow the advice for tuning the PID parameters manually.
+  * (Link) https://robotics.stackexchange.com/questions/167/what-are-good-strategies-for-tuning-pid-loops
+    * 1. Set all gains to zero
+    * 2. Increase the P gain until the response to a disturbance is steady oscillation
+    * 3. Increase the D gain until the the oscillations go away (i.e. it's critically damped)
+    * 4. Repeat steps 2 and 3 until increasing the D gain does not stop the oscillations
+    * 5. Set P and D to the last stable values
+    * 6. Increase the I gain until it brings you to the setpoint with the number of oscillations desired (normally zero but a quicker response can be had if you don't mind a couple oscillations of overshoot)
+
+
 ### 4. PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
 ### 5. (Optional) What would you do to improve the PID controller?
 
