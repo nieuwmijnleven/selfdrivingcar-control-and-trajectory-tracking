@@ -43,6 +43,9 @@ $> ./run_main.sh
 
 ## Experimental Results
 <kbd>
+ <img src = "project/img/result.gif?raw=true" width=1280/>
+</kbd>
+<kbd>
  <img src = "project/img/steer3.png?raw=true" width=640/>
 </kbd>
 <kbd>
