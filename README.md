@@ -41,6 +41,21 @@ $> ./run_main.sh
 * `ps -aux | grep carla`
 * `kill id`
 
+## Experimental Results
+<kbd>
+ <img src = "project/img/steer3.png?raw=true" width=640/>
+</kbd>
+<kbd>
+ <img src = "project/img/throttle.png?raw=true" width=640/>
+</kbd>
+
+## Answering the Questions
+### Add the plots to your report and explain them (describe what you see)
+### What is the effect of the PID according to the plots, how each part of the PID affects the control command?
+### How would you design a way to automatically tune the PID parameters?
+### PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+### (Optional) What would you do to improve the PID controller?
+
 
 # Proportional-Integral-Derivative (PID)
 
