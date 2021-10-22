@@ -76,7 +76,7 @@ $> ./run_main.sh
 </kbd>
 
 * The following graph shows throttle output and throttle error
-* throttle error line is stable and streight
+* throttle error line is stable and straight
   * Only our car moves in the simulatior  
   * There are no moving obstacles
   * Thus, there are no need for accelerations or deaccelerations
