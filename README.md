@@ -91,7 +91,7 @@ $> ./run_main.sh
 </kbd>
 
 ### 3. How would you design a way to automatically tune the PID parameters?
-* It is challenging to tuning the PID parameters automatically in the simulation environment
+* It is challenging to tune the PID parameters automatically in the simulation environment
 * We decided to follow the advice for tuning the PID parameters manually.
   * (Link) https://robotics.stackexchange.com/questions/167/what-are-good-strategies-for-tuning-pid-loops
     * 1. Set all gains to zero
