@@ -54,12 +54,12 @@ $> ./run_main.sh
 * We used the typical formula for PID controller
 * PID Error Computation Formula
   * total error = -kpi * cte + -kdi * diff_cte + -kii * int_cte
-  * cte = cross track error
-  * diff_cte = the difference between previous cte and current cte
-  * int_cte = integral(sum) of cte
-  * kpi = the gain of proportional
-  * kdi = the gain of derivative(or differential)
-  * kii = the gain of integral   
+    * cte = cross track error
+    * diff_cte = the difference between previous cte and current cte
+    * int_cte = integral(sum) of cte
+    * kpi = the gain of proportional
+    * kdi = the gain of derivative(or differential)
+    * kii = the gain of integral   
 ### CTE (Cross Track Error)
 * The CTE of Steering = {the actual rotational angle of the car(yaw)} - {angle between the last two points of the desired trajectory}
 * The CTE of Throttle = {the actual velocity of the car} - {the desired velocity(The last point of v_points vector contains the velocity computed by the path planner)}
